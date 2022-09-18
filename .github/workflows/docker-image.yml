@@ -23,4 +23,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ridecellimage:latest
     - name: Pushing to Docker Hub
-      run: docker push ridecellimage
+      run: docker push saiki8/ridecellimage
