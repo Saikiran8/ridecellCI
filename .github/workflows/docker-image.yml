@@ -16,6 +16,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag saiki8/ridecellci:$(date +%s)
     - name: Pushing to Docker Hub
-      run: docker push saiki8/ridecellci
+      run: docker push saiki8/ridecellci:$(date +%s)
 
 
