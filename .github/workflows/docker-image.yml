@@ -20,8 +20,8 @@ jobs:
       run: |
         docker login -u $USER -p $TOKEN
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag saiki8/ridecellci:latest
+      run: docker build . --file Dockerfile --tag saiki8/ridecellci:$(date +%s)
     - name: Pushing to Docker Hub
-      run: docker push saiki8/ridecellci:latest
+      run: docker push saiki8/ridecellci:$(date +%s)
 
 
