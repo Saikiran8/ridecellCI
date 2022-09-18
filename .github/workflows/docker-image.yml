@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ridecellImage:latest
+      run: docker build . --file Dockerfile --tag ridecellimage:latest
     - name: Viewing images built so far
       run: docker images
     - name: Containers checkout
