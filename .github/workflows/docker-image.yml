@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{secrets.DOCKERHUB_USERNAME}}/ridecellci:$(date +%s)
+      run: docker build . --file Dockerfile --tag saiki8/ridecellci:$(date +%s)
     - name: Pushing to Docker Hub
-      run: docker push ${{secrets.DOCKERHUB_USERNAME}}/ridecellci
+      run: docker push saiki8/ridecellci
 
 
