@@ -14,9 +14,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: docker login
+      env:
+        USER: ${{secrets.DOCKERHUB_USERNAME}}
+        TOKEN: ${{secrets.DOCKERHUB_TOKEN}}
+      run: |
+        docker login -u $USER -p $TOKEN
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ridecellimage:latest
-    - name: Viewing images built so far
-      run: docker images
-    - name: Containers checkout
-      run: docker ps -la
+    - name: Pushing to Docker Hub
+      run: docker push ridecellimage
