@@ -14,13 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: docker login
-      env:
-        USER: ${{secrets.DOCKERHUB_USERNAME}}
-        TOKEN: ${{secrets.DOCKERHUB_TOKEN}}
-      run: |
-        docker login -u $USER -p $TOKEN
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ridecellimage:latest
+      run: docker build . --file Dockerfile --tag ridecellci:$(date +%s)
     - name: Pushing to Docker Hub
-      run: docker push saiki8/ridecellimage
+      run: docker push saiki8/ridecellci
