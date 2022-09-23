@@ -20,7 +20,7 @@ jobs:
       run: |
         docker login -u $USER -p $TOKEN
     - name: merger
-      run: git branch --merged master
+      run: git branch --merged main
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag saiki8/ridecellci
     - name: Pushing to Docker Hub
