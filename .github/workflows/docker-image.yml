@@ -19,6 +19,8 @@ jobs:
         TOKEN: ${{secrets.DOCKERHUB_TOKEN}}
       run: |
         docker login -u $USER -p $TOKEN
+    - name: echo
+      run: echo 'sai'
     - name: merger
       run: git branch --merged main
     - name: Build the Docker image
