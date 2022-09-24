@@ -18,15 +18,9 @@ jobs:
         USER: ${{secrets.DOCKERHUB_USERNAME}}
         TOKEN: ${{secrets.DOCKERHUB_TOKEN}}
       run: |
-        docker login -u $USER -p $TOKEN   
-    - name: merged
-      run: git branch --merged
-    - name: no-merged
-      run: git branch --no-merged
-    - name: merged main
-      run: git branch --merged main
-    - name: no-merged main
-      run: git branch --no-merged main
+        docker login -u $USER -p $TOKEN 
+    - name: cmt
+      run: git log --format="%H" -n 1
 
 #     - name: Build the Docker image
 #       run: docker build . --file Dockerfile --tag saiki8/ridecellci
