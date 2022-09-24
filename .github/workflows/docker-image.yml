@@ -20,7 +20,7 @@ jobs:
       run: |
         docker login -u $USER -p $TOKEN
     - name: logs
-      run: git log
+      run: git log --reflog
 #     - name: Build the Docker image
 #       run: docker build . --file Dockerfile --tag saiki8/ridecellci
 #     - name: Pushing to Docker Hub
