@@ -19,10 +19,8 @@ jobs:
         TOKEN: ${{secrets.DOCKERHUB_TOKEN}}
       run: |
         docker login -u $USER -p $TOKEN
-    - name: echo
-      run: echo 'sai'
-    - name: merged
-      run: git branch -a -r --merged
+    - name: logs
+      run: git find-merge main
 #     - name: Build the Docker image
 #       run: docker build . --file Dockerfile --tag saiki8/ridecellci
 #     - name: Pushing to Docker Hub
